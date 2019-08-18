@@ -1,10 +1,11 @@
 import asyncio
 import discord
 import datetime
+import os
 
 client = discord.Client()
 
-token = "NjEyNzA2NTI5NTMxMDAyOTMy.XVmRdw.rBJfg5MIHKjmZKO3WqC9Te13jfY"
+token = "access_token"
 
 @client.event
 async def on_ready():
@@ -30,4 +31,5 @@ async def on_message(message):
         embed.set_image(url="https://i.imgur.com/TPXM3me.png")
         await message.channel.send(message.channel, embed=embed)
 
+access_token = os.environ["BOT_TOKEN"]
 client.run(token)
